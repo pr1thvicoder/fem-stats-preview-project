@@ -1,0 +1,121 @@
+@import 'variables';
+@import 'defaults';
+
+body {
+	font-size: 15px;
+	background: var(--clr-900);
+}
+
+.card_wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	margin: 3rem 0;
+}
+.card {
+	background: var(--clr-desat);
+	width: 500px;
+	margin: 0 auto;
+	border-radius: 0.75rem;
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		height: 300px;
+		width: 100%;
+		background: linear-gradient(90deg, rgba(170, 92, 219, 0.9)),
+			url('/images/image-header-mobile.jpg') no-repeat center top;
+		background-size: cover;
+		background-blend-mode: multiply;
+		border-radius: 0.75rem 0.75rem 0 0;
+	}
+}
+
+.card__info {
+	&-heading h1 {
+		margin: 1.25rem 1.75rem;
+		font-family: 'Inter', sans-serif;
+		color: var(--clr-neutral-900);
+		font-size: 2.45rem;
+		text-align: center;
+	}
+	&-accent {
+		color: var(--clr--100);
+	}
+	&-detail {
+		color: var(--clr-neutral-700);
+		text-align: center;
+		font-size: 1.15rem;
+		font-family: 'Inter', sans-serif;
+		line-height: 1.5;
+	}
+
+	&-stats {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 1.25rem 0;
+
+		span {
+			display: block;
+			text-align: center;
+			line-height: 2.5rem;
+		}
+	}
+
+	&-stat .stat-number {
+		font-size: 2rem;
+		color: var(--clr-neutral-900);
+		font-family: 'Inter', sans-serif;
+		font-weight: 700;
+	}
+	&-stat .stat-heading {
+		font-size: 1rem;
+		text-transform: uppercase;
+		color: var(--clr-neutral-100);
+		font-family: 'Lexend Deca', sans-serif;
+	}
+}
+
+@media (min-width: 1024px) {
+	.card {
+		flex-direction: row-reverse;
+		width: 80%;
+
+		&__image {
+			background: linear-gradient(90deg, rgba(170, 92, 219, 0.9)),
+				url('/images/image-header-desktop.jpg') no-repeat center top;
+			background-size: cover;
+			background-blend-mode: multiply;
+			border-radius: 0 0.75rem 0.75rem 0;
+			height: auto;
+			width: 50%;
+		}
+	}
+
+	.card__info {
+		&-heading h1 {
+			text-align: left;
+			margin-left: 1.75rem;
+			padding: 3rem 3rem 0 3rem;
+		}
+
+		&-detail {
+			text-align: left;
+			margin-left: 1.75rem;
+			padding: 0 0 0 3rem;
+		}
+
+		&-stats {
+			flex-direction: row;
+			justify-content: start;
+			margin: 4rem 2rem;
+
+			span {
+				text-align: left;
+				margin-left: 2.45rem;
+			}
+		}
+	}
+}
